@@ -59,9 +59,3 @@ To test the frontend login, use:
 ## Notes
 - Always use the `dev` script for setup, workspace access, and running frontend to avoid permission issues.
 - All commands are run inside the container as the `sail` user for proper permissions.
-
----
-For any issues, check logs with:
-```
-docker compose logs app
-```
