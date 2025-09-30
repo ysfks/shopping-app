@@ -12,12 +12,17 @@ git clone git@github.com:ysfks/shopping-app.git
 cd shopping-app
 ```
 
-2. **Make the dev script executable**
+2. **Run the containers**
+```sh
+docker compose up -d
+```
+
+3. **Make the dev script executable**
 ```sh
 chmod +x dev
 ```
 
-3. **Build and set up the environment**
+4. **Build and set up the environment**
 ```sh
 ./dev build
 ```
@@ -25,7 +30,7 @@ chmod +x dev
 - Runs migrations and seeds
 - Installs frontend dependencies
 
-4. **Import products from Fake Store API**
+5. **Import products from Fake Store API**
 - Access the container workspace:
 ```sh
 ./dev workspace
@@ -35,13 +40,13 @@ chmod +x dev
 php artisan products:import
 ```
 
-5. **Run the frontend app**
+6. **Run the frontend app**
 ```sh
 ./dev up:frontend
 ```
 - The frontend will be available at [http://localhost:5173](http://localhost:5173)
 
-6. **Run feature tests**
+7. **Run feature tests**
 - Access the container workspace:
 ```sh
 ./dev workspace
