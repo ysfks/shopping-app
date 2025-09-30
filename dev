@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ "$1" = "build" ]; then
+  docker compose exec --user=sail laravel.test bash -c "
+    cp .env.local .env &&
+    composer install &&
+    php artisan key:generate &&
+    php artisan migrate:fresh --seed &&
+    cd resources/ts &&
+    npm ci
+  "
+elif [ "$1" = "workspace" ]; then
+   docker compose exec --user=sail laravel.test bash
+elif [ "$1" = "up:frontend" ]; then
+   docker compose exec --user=sail laravel.test bash -c "
+       cd resources/ts &&
+       npm run dev
+     "
+else
+  echo 'Usage: ./dev build'
+fi
