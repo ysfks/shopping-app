@@ -8,7 +8,7 @@
 
 1. **Clone the project**
 ```sh
-git clone <your-repo-url>
+git clone git@github.com:ysfks/shopping-app.git
 cd shopping-app
 ```
 
